@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
   ]
 })
 export class AccountSettingsComponent {
+  
+  public linkTheme = document.querySelector('#theme');
+
+  changeTheme( theme: string ) {
+
+    const url = `./assets/css/colors/${ theme }.css`;
+    this.linkTheme?.setAttribute('href', url);
+    localStorage.setItem('theme', url);
+
+  }
 
 }
